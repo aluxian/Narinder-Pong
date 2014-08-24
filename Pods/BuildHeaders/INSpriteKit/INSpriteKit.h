@@ -1,1 +1,0 @@
-../../INSpriteKit/INSpriteKit/INSpriteKit.h

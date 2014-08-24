@@ -8,59 +8,42 @@
 
 import UIKit
 import SpriteKit
-
-extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
-        if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
-            var sceneData = NSData.dataWithContentsOfFile(path, options: .DataReadingMappedIfSafe, error: nil)
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-            
-            archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
-            archiver.finishDecoding()
-            return scene
-        } else {
-            return nil
-        }
-    }
-}
+import AVFoundation
 
 class GameViewController: UIViewController {
+
+    var backgroundMusic: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
-    }
+        // Play background music
+        let pathToBackGroundMusic = NSBundle.mainBundle().pathForResource("spip_floating_in_space", ofType: "mp3")
+        backgroundMusic = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: pathToBackGroundMusic!), error: nil)
+        backgroundMusic.numberOfLoops = -1
+        backgroundMusic.volume = 0.8
+        //backgroundMusic.play()
 
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> Int {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.AllButUpsideDown.toRaw())
-        } else {
-            return Int(UIInterfaceOrientationMask.All.toRaw())
-        }
+        // Configure the view
+        let skView = self.view as SKView
+        
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.showsPhysics = true
+        
+        // Sprite Kit applies additional optimizations to improve rendering performance
+        skView.ignoresSiblingOrder = true
+        
+        // Display the main scene
+        let menuScene = MenuScene(size: CGSize(width: 1024, height: 768))
+        menuScene.scaleMode = SKSceneScaleMode.AspectFill
+        
+        skView.presentScene(menuScene)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+        // Release any cached data, images, etc that aren't in use
     }
 
     override func prefersStatusBarHidden() -> Bool {

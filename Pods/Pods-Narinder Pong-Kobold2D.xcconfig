@@ -1,1 +1,0 @@
-PODS_NARINDER_PONG_KOBOLD_D_OTHER_LDFLAGS = -lz -framework AVFoundation -framework AudioToolbox -framework GameKit -framework OpenAL -framework OpenGLES -framework QuartzCore -framework iAd
