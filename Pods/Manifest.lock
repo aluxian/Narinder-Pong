@@ -1,0 +1,13 @@
+PODS:
+  - INSpriteKit (1.1)
+  - PhysicsDebugger (1.0.0)
+
+DEPENDENCIES:
+  - INSpriteKit (~> 1.1)
+  - PhysicsDebugger (~> 1.0)
+
+SPEC CHECKSUMS:
+  INSpriteKit: 5c2a4084f0d9a490d37ab230ba871a8a01c80c33
+  PhysicsDebugger: c4b9e475d3939b2b0bcda04343b098617e6b814d
+
+COCOAPODS: 0.33.1

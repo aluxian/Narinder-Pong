@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79762E1519A9DA9300A53DFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762E1419A9DA9300A53DFC /* AppDelegate.swift */; };
+		79762E1719A9DA9300A53DFC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79762E1619A9DA9300A53DFC /* GameScene.sks */; };
+		79762E1919A9DA9300A53DFC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762E1819A9DA9300A53DFC /* GameScene.swift */; };
+		79762E1B19A9DA9300A53DFC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762E1A19A9DA9300A53DFC /* GameViewController.swift */; };
+		79762E1E19A9DA9300A53DFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79762E1C19A9DA9300A53DFC /* Main.storyboard */; };
+		79762E2019A9DA9300A53DFC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79762E1F19A9DA9300A53DFC /* Images.xcassets */; };
+		79762E2C19A9DA9300A53DFC /* Narinder_PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79762E2B19A9DA9300A53DFC /* Narinder_PongTests.swift */; };
+		9CEDC2A3466946D7996065E8 /* libPods-Narinder Pong.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA4232866794424D9CB43C9F /* libPods-Narinder Pong.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79762E2619A9DA9300A53DFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79762E0719A9DA9300A53DFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79762E0E19A9DA9300A53DFC;
+			remoteInfo = "Narinder Pong";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79762E0F19A9DA9300A53DFC /* Narinder Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Narinder Pong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79762E1319A9DA9300A53DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79762E1419A9DA9300A53DFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79762E1619A9DA9300A53DFC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		79762E1819A9DA9300A53DFC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		79762E1A19A9DA9300A53DFC /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		79762E1D19A9DA9300A53DFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79762E1F19A9DA9300A53DFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		79762E2519A9DA9300A53DFC /* Narinder PongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Narinder PongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79762E2A19A9DA9300A53DFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79762E2B19A9DA9300A53DFC /* Narinder_PongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Narinder_PongTests.swift; sourceTree = "<group>"; };
+		79762E3519A9DF8C00A53DFC /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		7FF67EF99B30437D804D3E15 /* Pods-Narinder Pong.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Narinder Pong.xcconfig"; path = "Pods/Pods-Narinder Pong.xcconfig"; sourceTree = "<group>"; };
+		AA4232866794424D9CB43C9F /* libPods-Narinder Pong.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Narinder Pong.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79762E0C19A9DA9300A53DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CEDC2A3466946D7996065E8 /* libPods-Narinder Pong.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79762E2219A9DA9300A53DFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79762E0619A9DA9300A53DFC = {
+			isa = PBXGroup;
+			children = (
+				79762E1119A9DA9300A53DFC /* Narinder Pong */,
+				79762E2819A9DA9300A53DFC /* Narinder PongTests */,
+				79762E1019A9DA9300A53DFC /* Products */,
+				7FF67EF99B30437D804D3E15 /* Pods-Narinder Pong.xcconfig */,
+				ACD5C3F2C0854050AF7B1899 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		79762E1019A9DA9300A53DFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79762E0F19A9DA9300A53DFC /* Narinder Pong.app */,
+				79762E2519A9DA9300A53DFC /* Narinder PongTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79762E1119A9DA9300A53DFC /* Narinder Pong */ = {
+			isa = PBXGroup;
+			children = (
+				79762E3519A9DF8C00A53DFC /* Bridging-Header.h */,
+				79762E1419A9DA9300A53DFC /* AppDelegate.swift */,
+				79762E1619A9DA9300A53DFC /* GameScene.sks */,
+				79762E1819A9DA9300A53DFC /* GameScene.swift */,
+				79762E1A19A9DA9300A53DFC /* GameViewController.swift */,
+				79762E1C19A9DA9300A53DFC /* Main.storyboard */,
+				79762E1F19A9DA9300A53DFC /* Images.xcassets */,
+				79762E1219A9DA9300A53DFC /* Supporting Files */,
+			);
+			path = "Narinder Pong";
+			sourceTree = "<group>";
+		};
+		79762E1219A9DA9300A53DFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79762E1319A9DA9300A53DFC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79762E2819A9DA9300A53DFC /* Narinder PongTests */ = {
+			isa = PBXGroup;
+			children = (
+				79762E2B19A9DA9300A53DFC /* Narinder_PongTests.swift */,
+				79762E2919A9DA9300A53DFC /* Supporting Files */,
+			);
+			path = "Narinder PongTests";
+			sourceTree = "<group>";
+		};
+		79762E2919A9DA9300A53DFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79762E2A19A9DA9300A53DFC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ACD5C3F2C0854050AF7B1899 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA4232866794424D9CB43C9F /* libPods-Narinder Pong.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79762E0E19A9DA9300A53DFC /* Narinder Pong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79762E2F19A9DA9300A53DFC /* Build configuration list for PBXNativeTarget "Narinder Pong" */;
+			buildPhases = (
+				02CA8FAD675E4BDC920A1991 /* Check Pods Manifest.lock */,
+				79762E0B19A9DA9300A53DFC /* Sources */,
+				79762E0C19A9DA9300A53DFC /* Frameworks */,
+				79762E0D19A9DA9300A53DFC /* Resources */,
+				FA119F52D76F489B930DE9E3 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Narinder Pong";
+			productName = "Narinder Pong";
+			productReference = 79762E0F19A9DA9300A53DFC /* Narinder Pong.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79762E2419A9DA9300A53DFC /* Narinder PongTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79762E3219A9DA9300A53DFC /* Build configuration list for PBXNativeTarget "Narinder PongTests" */;
+			buildPhases = (
+				79762E2119A9DA9300A53DFC /* Sources */,
+				79762E2219A9DA9300A53DFC /* Frameworks */,
+				79762E2319A9DA9300A53DFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79762E2719A9DA9300A53DFC /* PBXTargetDependency */,
+			);
+			name = "Narinder PongTests";
+			productName = "Narinder PongTests";
+			productReference = 79762E2519A9DA9300A53DFC /* Narinder PongTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79762E0719A9DA9300A53DFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Alexandru Rosianu";
+				TargetAttributes = {
+					79762E0E19A9DA9300A53DFC = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					79762E2419A9DA9300A53DFC = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 79762E0E19A9DA9300A53DFC;
+					};
+				};
+			};
+			buildConfigurationList = 79762E0A19A9DA9300A53DFC /* Build configuration list for PBXProject "Narinder Pong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79762E0619A9DA9300A53DFC;
+			productRefGroup = 79762E1019A9DA9300A53DFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79762E0E19A9DA9300A53DFC /* Narinder Pong */,
+				79762E2419A9DA9300A53DFC /* Narinder PongTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79762E0D19A9DA9300A53DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79762E2019A9DA9300A53DFC /* Images.xcassets in Resources */,
+				79762E1719A9DA9300A53DFC /* GameScene.sks in Resources */,
+				79762E1E19A9DA9300A53DFC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79762E2319A9DA9300A53DFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02CA8FAD675E4BDC920A1991 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA119F52D76F489B930DE9E3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Narinder Pong-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79762E0B19A9DA9300A53DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79762E1919A9DA9300A53DFC /* GameScene.swift in Sources */,
+				79762E1B19A9DA9300A53DFC /* GameViewController.swift in Sources */,
+				79762E1519A9DA9300A53DFC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79762E2119A9DA9300A53DFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79762E2C19A9DA9300A53DFC /* Narinder_PongTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79762E2719A9DA9300A53DFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79762E0E19A9DA9300A53DFC /* Narinder Pong */;
+			targetProxy = 79762E2619A9DA9300A53DFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79762E1C19A9DA9300A53DFC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79762E1D19A9DA9300A53DFC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79762E2D19A9DA9300A53DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79762E2E19A9DA9300A53DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79762E3019A9DA9300A53DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF67EF99B30437D804D3E15 /* Pods-Narinder Pong.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Narinder Pong/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Narinder Pong/Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		79762E3119A9DA9300A53DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF67EF99B30437D804D3E15 /* Pods-Narinder Pong.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Narinder Pong/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Narinder Pong/Bridging-Header.h";
+			};
+			name = Release;
+		};
+		79762E3319A9DA9300A53DFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Narinder PongTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Narinder Pong.app/Narinder Pong";
+			};
+			name = Debug;
+		};
+		79762E3419A9DA9300A53DFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Narinder PongTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Narinder Pong.app/Narinder Pong";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79762E0A19A9DA9300A53DFC /* Build configuration list for PBXProject "Narinder Pong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79762E2D19A9DA9300A53DFC /* Debug */,
+				79762E2E19A9DA9300A53DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79762E2F19A9DA9300A53DFC /* Build configuration list for PBXNativeTarget "Narinder Pong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79762E3019A9DA9300A53DFC /* Debug */,
+				79762E3119A9DA9300A53DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79762E3219A9DA9300A53DFC /* Build configuration list for PBXNativeTarget "Narinder PongTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79762E3319A9DA9300A53DFC /* Debug */,
+				79762E3419A9DA9300A53DFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79762E0719A9DA9300A53DFC /* Project object */;
+}
