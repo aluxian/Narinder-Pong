@@ -29,6 +29,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ],
         "Level_5": [
             "Background": "bg_0.jpg"
+        ],
+        "Level_6": [
+            "Background": "bg_0.jpg"
         ]
     ]
     

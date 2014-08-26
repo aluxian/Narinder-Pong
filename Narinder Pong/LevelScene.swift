@@ -13,10 +13,11 @@ class LevelScene: GameScene {
     // Collision bitmasks
     struct Bitmask {
         static let Ball             : UInt32 = 0b00000001
-        static let Enemy            : UInt32 = 0b00000010
-        static let KillZone         : UInt32 = 0b00000100
-        static let Paddle           : UInt32 = 0b00001000
-        static let View             : UInt32 = 0b00010000
+        static let BladeSaw         : UInt32 = 0b00000010
+        static let Enemy            : UInt32 = 0b00000100
+        static let KillZone         : UInt32 = 0b00001000
+        static let Paddle           : UInt32 = 0b00010000
+        static let View             : UInt32 = 0b00100000
     }
     
     // Ball constants
@@ -86,16 +87,29 @@ class LevelScene: GameScene {
         ],
         
         5: [
+            "enemy_sprite": "pinkrobot4_spr_strip8.png",
+            "sprites_no": 8,
+            "offset_h": 0,
+            "offset_v": 0,
+            "spacing": 10,
+            "columns": 5,
+            "rows": 3,
+            "padding": 22,
+            "timePerFrame": 0.75,
+            "sounds": ["bulletslap.wav", "alarm1.wav", "robot.wav"]
+        ],
+        
+        6: [
             "enemy_sprite": "narinder_head.png",
             "sprites_no": 1,
             "offset_h": 0,
             "offset_v": 0,
-            "spacing": 5,
-            "columns": 3,
+            "spacing": 20,
+            "columns": 5,
             "rows": 3,
-            "padding": 22,
+            "padding": 15,
             "timePerFrame": 0.75,
-            "sounds": ["robotspawn1.wav", "robotspawn2.wav"]
+            "sounds": ["ouch_1.mp3", "ouch_2.mp3", "ouch_3.mp3"]
         ]
     ]
     
@@ -210,6 +224,25 @@ class LevelScene: GameScene {
         if bodyA.categoryBitMask == Bitmask.Ball && bodyB.categoryBitMask == Bitmask.Enemy {
             contact_ball__enemy(bodyA, bodyB: bodyB)
         }
+        
+        // Ball - BladeSaw
+        if bodyA.categoryBitMask == Bitmask.Ball && bodyB.categoryBitMask == Bitmask.BladeSaw {
+            let path = NSBundle.mainBundle().pathForResource("EnemyExplosion", ofType: "sks")
+            let explosion = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+            
+            explosion.position = ball.position
+            explosion.particleTexture = SKTexture(imageNamed: "spark.png")
+            explosion.particleColor = UIColor(red: 150/255, green: 0, blue: 0, alpha: 1)
+            
+            ball.runAction(SKAction.fadeAlphaTo(0, duration: 0.05))
+            
+            explosion.runAction(SKAction.sequence([
+                SKAction.scaleTo(0.3, duration: 0),
+                SKAction.playSoundFileNamed(randomBool() ? "dying.wav" : "wilhelmscream.wav", waitForCompletion: false)
+            ]))
+            
+            addChild(explosion)
+        }
     }
     
     // CONTACT FUNCTIONS
@@ -220,34 +253,78 @@ class LevelScene: GameScene {
     }
     
     func contact_ball__killzone(bodyA: SKPhysicsBody, bodyB: SKPhysicsBody) {
-        ball.runAction(SKAction.sequence([
-            SKAction.waitForDuration(0.25),
-            SKAction.playSoundFileNamed(randomBool() ? "dying.wav" : "wilhelmscream.wav", waitForCompletion: false)
-            ]))
+        let selected_ball = NSUserDefaults.standardUserDefaults().integerForKey("selected_ball")
         
-        // Animate the bladesaw
-        bladesaw.runAction(SKAction.sequence([
-            SKAction.moveTo(CGPoint(x: frame.width + bladesaw.frame.width / 2, y: ball.frame.origin.y - bladesaw.frame.height / 2 - 20), duration: 0),
-            SKAction.playSoundFileNamed("bladesaw.wav", waitForCompletion: false),
-            SKAction.moveToX(-(bladesaw.frame.width / 2), duration: 1),
-            SKAction.waitForDuration(1),
-            SKAction.runBlock({
-                let selected = NSUserDefaults.standardUserDefaults().integerForKey("selected_ball")
+        func boom() {
+            let path = NSBundle.mainBundle().pathForResource("EnemyExplosion", ofType: "sks")
+            let explosion = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+            
+            explosion.position = ball.position
+            
+            if selected_ball == 0 {
+                explosion.particleColor = UIColor(red: 150/255, green: 0, blue: 0, alpha: 1)
                 
-                let gameOver = SKSpriteNode(imageNamed: selected == 0 ? "txt_killed.png" : "txt_killed2.png")
-                gameOver.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 30)
-                gameOver.zPosition = 100
+                explosion.runAction(SKAction.sequence([
+                    SKAction.playSoundFileNamed("Explosion50.wav", waitForCompletion: false),
+                    SKAction.scaleTo(0.3, duration: 0),
+                    SKAction.runBlock({
+                        self.gameOver()
+                    })
+                ]))
+            } else {
+                explosion.particleTexture = ball.texture
                 
-                self.addChild(gameOver)
-                self.game_over = true
-            }),
-            SKAction.playSoundFileNamed("gemchange.wav", waitForCompletion: false)
-        ]))
+                explosion.runAction(SKAction.sequence([
+                    SKAction.playSoundFileNamed("Explosion50.wav", waitForCompletion: false),
+                    SKAction.scaleTo(0.3, duration: 0),
+                    SKAction.fadeAlphaTo(0, duration: 0.3),
+                    SKAction.runBlock({
+                        self.gameOver()
+                    }),
+                    SKAction.removeFromParent()
+                ]))
+            }
+            
+            ball.runAction(SKAction.fadeAlphaTo(0, duration: 0.05))
+            self.addChild(explosion)
+        }
         
-        ball.physicsBody.linearDamping = magnitude(ball.physicsBody.velocity) / 100
+        if selected_ball == 0 {
+            if randomBool() {
+                // Animate the bladesaw
+                bladesaw.runAction(SKAction.sequence([
+                    SKAction.moveTo(CGPoint(x: frame.width + bladesaw.frame.width / 2, y: ball.frame.origin.y - bladesaw.frame.height / 2 - 20), duration: 0),
+                    SKAction.playSoundFileNamed("bladesaw.wav", waitForCompletion: false),
+                    SKAction.moveToX(-(bladesaw.frame.width / 2), duration: 1),
+                    SKAction.waitForDuration(1),
+                    SKAction.runBlock({
+                        self.gameOver()
+                    })
+                ]))
+            } else {
+                boom()
+            }
+        } else {
+            boom()
+        }
+        
+        ball.physicsBody.linearDamping = magnitude(ball.physicsBody.velocity) / 50
         ball.physicsBody.angularDamping = fabs(ball.physicsBody.angularVelocity) / 2
         
         ball_dead = true
+    }
+    
+    func gameOver() {
+        let selected = NSUserDefaults.standardUserDefaults().integerForKey("selected_ball")
+        
+        let gameOver = SKSpriteNode(imageNamed: selected == 0 ? "txt_killed.png" : "txt_killed2.png")
+        gameOver.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 30)
+        gameOver.zPosition = 100
+        
+        gameOver.runAction(SKAction.playSoundFileNamed("gemchange.wav", waitForCompletion: false))
+        
+        self.addChild(gameOver)
+        self.game_over = true
     }
     
     func contact_ball__enemy(bodyA: SKPhysicsBody, bodyB: SKPhysicsBody) {
@@ -288,6 +365,8 @@ class LevelScene: GameScene {
                                 
                                 self.addChild(gameFinished)
                                 self.game_over = true
+                                
+                                self.runAction(SKAction.playSoundFileNamed("mission_acc.wav", waitForCompletion: false))
                             } else {
                                 self.next_level()
                             }
@@ -316,7 +395,7 @@ class LevelScene: GameScene {
             ball = SKSpriteNode(imageNamed: "ball_\(selected).png")
         }
         
-        ball.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        ball.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) - 30)
         ball.alpha = 0
         
         ball.runAction(SKAction.sequence([
@@ -369,8 +448,9 @@ class LevelScene: GameScene {
         bladesaw.physicsBody = SKPhysicsBody(circleOfRadius: bladesaw.size.width / 2)
         bladesaw.physicsBody.angularVelocity = 4
         
-        bladesaw.physicsBody.categoryBitMask = 0
+        bladesaw.physicsBody.categoryBitMask = Bitmask.BladeSaw
         bladesaw.physicsBody.collisionBitMask = 0
+        bladesaw.physicsBody.contactTestBitMask = Bitmask.Ball
     }
     
     func create_viewFrame() {
