@@ -7,3 +7,4 @@
 //
 
 #import "INSKButtonNode.h"
+#import "SKEmitterNode+INExtension.h"
